@@ -15,6 +15,7 @@
     background-color: #fdfaf3;
     font-family: Arial, sans-serif;
     color: #333;
+    transition: background-color 0.3s ease;
   }
 
   header {
@@ -36,6 +37,21 @@
     object-fit: cover;
     border: 4px solid white;
     margin-bottom: 15px;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: darkorange;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #cc7000;
   }
 
   main {
@@ -103,6 +119,7 @@
   <img src="photo.jpg" alt="Photo de Pierre" class="photo-profil">
   <h1>Bonjour, je m'appelle Pierre</h1>
   <p>Étudiant · Passionné de jeux vidéo · Débutant en code</p>
+  <button onclick="changerCouleur()">Change la couleur de fond</button>
 </header>
 
 <main>
@@ -136,6 +153,14 @@
 <footer>
   <p>Merci d'avoir visité mon site</p>
 </footer>
+
+<script>
+  function changerCouleur() {
+    const couleurs = ["#fdfaf3", "#e0f7fa", "#fce4ec", "#e8f5e9", "#fff3e0"];
+    const couleurAleatoire = couleurs[Math.floor(Math.random() * couleurs.length)];
+    document.body.style.backgroundColor = couleurAleatoire;
+  }
+</script>
 
 </body>
 </html>
