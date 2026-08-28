@@ -54,6 +54,23 @@
     background-color: #cc7000;
   }
 
+  nav {
+    text-align: center;
+    background-color: #333;
+    padding: 15px;
+  }
+
+  nav a {
+    color: white;
+    margin: 0 15px;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    color: darkorange;
+  }
+
   main {
     max-width: 700px;
     margin: 30px auto;
@@ -84,11 +101,14 @@
 
   a {
     color: darkorange;
-    text-decoration: none;
     font-weight: bold;
   }
 
-  a:hover {
+  section a {
+    text-decoration: none;
+  }
+
+  section a:hover {
     text-decoration: underline;
   }
 
@@ -121,6 +141,11 @@
   <p>Étudiant · Passionné de jeux vidéo · Débutant en code</p>
   <button onclick="changerCouleur()">Change la couleur de fond</button>
 </header>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="lectures.html">Mes lectures</a>
+</nav>
 
 <main>
 
