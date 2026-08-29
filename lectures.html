@@ -27,6 +27,20 @@
     nav a { margin: 0 8px; font-size: 16px; }
     section { padding: 15px; }
   }
+  main, header {
+    animation: apparition 0.8s ease;
+  }
+
+  @keyframes apparition {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }     
 </style>
 </head>
 <body>
