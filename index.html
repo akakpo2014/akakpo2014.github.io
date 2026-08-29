@@ -95,7 +95,7 @@
   <img src="photo.jpg" alt="Photo de Pierre" class="photo-profil">
   <h1>Bonjour, je m'appelle Pierre</h1>
   <p>Étudiant · Débutant en code</p>
-  <button onclick="basculerMode()">🌙 Mode sombre</button>
+  <button onclick="basculerMode()" aria-label="Activer ou désactiver le mode sombre">🌙 Mode sombre</button>
 </header>
 
 <nav>
@@ -142,7 +142,7 @@
   <p>Merci d'avoir visité mon site</p>
 </footer>
 
-<button id="boutonHaut" onclick="remonterHaut()">⬆️</button>
+<button id="boutonHaut" onclick="remonterHaut()" aria-label="Remonter en haut de la page">⬆️</button>
 
 <script>
   function basculerMode() {
