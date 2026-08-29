@@ -98,7 +98,11 @@
 <script>
   function basculerMode() {
     document.body.classList.toggle("dark");
+    localStorage.setItem("modeSombre", document.body.classList.contains("dark"));
   }
+   if (localStorage.getItem("modeSombre") === "true") {
+    document.body.classList.add("dark");
+  } 
 </script>
 
 </body>
