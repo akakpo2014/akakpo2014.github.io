@@ -62,9 +62,17 @@
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    margin-top: 0;
   }
   #boutonHaut:hover { background-color: #3a5a8a; }
+  form { text-align: left; }
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+  }
   @media (max-width: 600px) {
     header h1 { font-size: 28px; }
     main { padding: 0 10px; }
@@ -106,7 +114,18 @@
 
   <section>
     <h2>Me contacter</h2>
-    <p>Tu peux me joindre par email : <a href="mailto:pierreakakpo33@gmail.com">pierreakakpo33@gmail.com</a></p>
+    <form action="https://formspree.io/f/mbgjlkbj" method="POST">
+      <label for="nom">Ton nom :</label><br>
+      <input type="text" id="nom" name="nom" required><br><br>
+
+      <label for="email">Ton email :</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Ton message :</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit">Envoyer</button>
+    </form>
   </section>
 
 </main>
