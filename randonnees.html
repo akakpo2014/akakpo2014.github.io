@@ -24,23 +24,29 @@
   .rando { margin-bottom: 20px; }
   .rando h3 { color: inherit; margin-bottom: 5px; }
   .rando p { color: inherit; opacity: 0.85; }
+  main, header { animation: apparition 0.8s ease; }
+  @keyframes apparition {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  #boutonHaut {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 12px 16px;
+    font-size: 20px;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  #boutonHaut:hover { background-color: #3a5a8a; }
   @media (max-width: 600px) {
     nav a { margin: 0 8px; font-size: 16px; }
     section { padding: 15px; }
-  }
-  main, header {
-    animation: apparition 0.8s ease;
-  }
-
-  @keyframes apparition {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 </style>
 </head>
@@ -72,6 +78,8 @@
   </section>
 </main>
 
+<button id="boutonHaut" onclick="remonterHaut()">⬆️</button>
+
 <script>
   function basculerMode() {
     document.body.classList.toggle("dark");
@@ -79,6 +87,19 @@
   }
   if (localStorage.getItem("modeSombre") === "true") {
     document.body.classList.add("dark");
+  }
+
+  window.onscroll = function() {
+    const bouton = document.getElementById("boutonHaut");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      bouton.style.display = "block";
+    } else {
+      bouton.style.display = "none";
+    }
+  };
+
+  function remonterHaut() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 </script>
 
