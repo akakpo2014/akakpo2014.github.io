@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mes randonnées - Pierre</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background-color: #fdfaf3; font-family: Arial, sans-serif; color: #333; }
+  header { background-color: #4a6fa5; color: white; text-align: center; padding: 30px 20px; }
+  nav { text-align: center; background-color: #333; padding: 15px; }
+  nav a { color: white; margin: 0 12px; font-size: 18px; text-decoration: none; }
+  nav a:hover { color: darkorange; }
+  main { max-width: 700px; margin: 30px auto; padding: 0 20px; }
+  section { background-color: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  section:hover { transform: scale(1.02); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  section h2 { color: #4a6fa5; margin-bottom: 15px; }
+  .rando { margin-bottom: 20px; }
+  .rando h3 { color: #333; margin-bottom: 5px; }
+  .rando p { color: #555; }
+  @media (max-width: 600px) {
+    nav a { margin: 0 8px; font-size: 16px; }
+    section { padding: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mes randonnées</h1>
+</header>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="lectures.html">Mes lectures</a>
+  <a href="randonnees.html">Mes randonnées</a>
+  <a href="jeuxvideo.html">Jeux vidéo</a>
+</nav>
+
+<main>
+  <section>
+    <h2>Quelques randonnées mémorables</h2>
+
+    <div class="rando">
+      <h3>Le sentier du Mont-Royal</h3>
+      <p>Une belle balade avec une vue magnifique sur la ville en haut.</p>
+    </div>
+
+    <div class="rando">
+      <h3>La forêt de Fontainebleau</h3>
+      <p>Des chemins tranquilles au milieu des rochers, parfait pour une sortie nature.</p>
+    </div>
+
+  </section>
+</main>
+
+</body>
+</html>
