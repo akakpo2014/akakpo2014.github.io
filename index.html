@@ -22,6 +22,15 @@
   .photo-profil { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid white; margin-bottom: 15px; }
   button { margin-top: 15px; padding: 10px 20px; font-size: 16px; background-color: darkorange; color: white; border: none; border-radius: 6px; cursor: pointer; }
   button:hover { background-color: #cc7000; }
+  .reseaux { margin-top: 15px; }
+  .reseaux a {
+    display: inline-block;
+    margin: 0 8px;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+  }
+  .reseaux a:hover { color: darkorange; }
   nav { text-align: center; background-color: #333; padding: 15px; }
   nav a { color: white; margin: 0 12px; font-size: 18px; text-decoration: none; }
   nav a:hover { color: darkorange; }
@@ -43,6 +52,11 @@
   a { color: darkorange; font-weight: bold; }
   section a { text-decoration: none; }
   section a:hover { text-decoration: underline; }
+  .competence { margin-bottom: 15px; }
+  .competence-nom { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: bold; }
+  .barre-fond { background-color: #eee; border-radius: 10px; overflow: hidden; height: 16px; }
+  body.dark .barre-fond { background-color: #444; }
+  .barre-remplie { background-color: #4a6fa5; height: 100%; border-radius: 10px; }
   footer { text-align: center; color: gray; padding: 20px; }
   main, header { animation: apparition 0.8s ease; }
   @keyframes apparition {
@@ -92,10 +106,15 @@
 <body>
 
 <header>
-  <img src="photo.jpeg" alt="Photo de Pierre" class="photo-profil">
+  <img src="photo.jpg" alt="Photo de Pierre" class="photo-profil">
   <h1>Bonjour, je m'appelle Pierre</h1>
   <p>Étudiant · Débutant en code</p>
   <button onclick="basculerMode()" aria-label="Activer ou désactiver le mode sombre">🌙 Mode sombre</button>
+
+  <div class="reseaux">
+    <a href="https://github.com/akakpo2014" target="_blank" aria-label="Mon GitHub">🐙</a>
+    <a href="https://www.tiktok.com/@pierreakakpo78" target="_blank" aria-label="Mon TikTok">🎵</a>
+  </div>
 </header>
 
 <nav>
@@ -110,6 +129,26 @@
   <section>
     <h2>À propos de moi</h2>
     <p>Je suis étudiant, et je débute dans le code.</p>
+  </section>
+
+  <section>
+    <h2>Mes compétences</h2>
+
+    <div class="competence">
+      <div class="competence-nom"><span>HTML</span><span>Débutant</span></div>
+      <div class="barre-fond"><div class="barre-remplie" style="width: 40%;"></div></div>
+    </div>
+
+    <div class="competence">
+      <div class="competence-nom"><span>CSS</span><span>Débutant</span></div>
+      <div class="barre-fond"><div class="barre-remplie" style="width: 35%;"></div></div>
+    </div>
+
+    <div class="competence">
+      <div class="competence-nom"><span>JavaScript</span><span>Débutant</span></div>
+      <div class="barre-fond"><div class="barre-remplie" style="width: 20%;"></div></div>
+    </div>
+
   </section>
 
   <section>
