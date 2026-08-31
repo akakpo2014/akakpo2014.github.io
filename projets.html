@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mes projets - Pierre</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background-color: #fdfaf3; font-family: Arial, sans-serif; color: #333; transition: background-color 0.3s ease, color 0.3s ease; }
+  body.dark { background-color: #1e1e1e; color: #eee; }
+  header { background-color: #4a6fa5; color: white; text-align: center; padding: 30px 20px; }
+  header button { margin-top: 10px; padding: 8px 16px; font-size: 14px; background-color: darkorange; color: white; border: none; border-radius: 6px; cursor: pointer; }
+  header button:hover { background-color: #cc7000; }
+  nav { text-align: center; background-color: #333; padding: 15px; }
+  nav a { color: white; margin: 0 12px; font-size: 18px; text-decoration: none; }
+  nav a:hover { color: darkorange; }
+  main { max-width: 700px; margin: 30px auto; padding: 0 20px; }
+  section { background-color: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease; }
+  body.dark section { background-color: #2c2c2c; }
+  section:hover { transform: scale(1.02); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  section h2 { color: #4a6fa5; margin-bottom: 15px; }
+  body.dark section h2 { color: #8fb3e0; }
+  .projet p { color: inherit; opacity: 0.85; margin-bottom: 10px; }
+  .projet a {
+    display: inline-block;
+    background-color: darkorange;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .projet a:hover { background-color: #cc7000; }
+  main, header { animation: apparition 0.8s ease; }
+  @keyframes apparition {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  #boutonHaut {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 12px 16px;
+    font-size: 20px;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  #boutonHaut:hover { background-color: #3a5a8a; }
+  @media (max-width: 600px) {
+    nav a { margin: 0 8px; font-size: 16px; }
+    section { padding: 15px; }
+  }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57NSSHZ23V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-57NSSHZ23V');
+</script>
+</head>
+<body>
+
+<header>
+  <h1>Mes projets</h1>
+  <button onclick="basculerMode()" aria-label="Activer ou désactiver le mode sombre">🌙 Mode sombre</button>
+</header>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="lectures.html">Mes lectures</a>
+  <a href="randonnees.html">Mes randonnées</a>
+  <a href="jeuxvideo.html">Jeux vidéo</a>
+  <a href="projets.html">Mes projets</a>
+</nav>
+
+<main>
+  <section>
+    <h2>Mon site personnel</h2>
+    <div class="projet">
+      <p>Mon tout premier projet de code ! Un site personnel construit avec HTML, CSS et JavaScript, avec plusieurs pages, un mode sombre, un formulaire de contact, et une navigation complète.</p>
+      <a href="index.html">Voir le site</a>
+    </div>
+  </section>
+</main>
+
+<button id="boutonHaut" onclick="remonterHaut()" aria-label="Remonter en haut de la page">⬆️</button>
+
+<script>
+  function basculerMode() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("modeSombre", document.body.classList.contains("dark"));
+  }
+  if (localStorage.getItem("modeSombre") === "true") {
+    document.body.classList.add("dark");
+  }
+
+  window.onscroll = function() {
+    const bouton = document.getElementById("boutonHaut");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      bouton.style.display = "block";
+    } else {
+      bouton.style.display = "none";
+    }
+  };
+
+  function remonterHaut() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>
+
+</body>
+</html>
