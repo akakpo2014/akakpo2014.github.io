@@ -70,6 +70,14 @@
   .jeu-ppc button:hover { background-color: #eef3fa; }
   body.dark .jeu-ppc button { background-color: #2c2c2c; }
   #resultatPPC { margin-top: 15px; font-size: 18px; font-weight: bold; }
+  #horloge {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a6fa5;
+    text-align: center;
+    margin-top: 10px;
+  }
+  body.dark #horloge { color: #8fb3e0; }
   footer { text-align: center; color: gray; padding: 20px; }
   main, header { animation: apparition 0.8s ease; }
   @keyframes apparition {
@@ -143,6 +151,11 @@
   <section>
     <h2>À propos de moi</h2>
     <p>Je suis étudiant, et je débute dans le code.</p>
+  </section>
+
+  <section>
+    <h2>Il est actuellement...</h2>
+    <p id="horloge"></p>
   </section>
 
   <section>
@@ -248,16 +261,17 @@
 
     document.getElementById("resultatPPC").textContent = resultat;
   }
-  function mettreAJourHorloge() {
-   const maintenant = new Date();
-   const heures = String(maintenant.getHours()).padStart(2, '0');
-   const minutes = String(maintenant.getMinutes()).padStart(2, '0');
-   const secondes = String(maintenant.getSeconds()).padStart(2, '0');
-   document.getElementById("horloge").textContent = `${heures}:${minutes}:${secondes}`;
- }
 
- setInterval(mettreAJourHorloge, 1000);
- mettreAJourHorloge();
+  function mettreAJourHorloge() {
+    const maintenant = new Date();
+    const heures = String(maintenant.getHours()).padStart(2, '0');
+    const minutes = String(maintenant.getMinutes()).padStart(2, '0');
+    const secondes = String(maintenant.getSeconds()).padStart(2, '0');
+    document.getElementById("horloge").textContent = `${heures}:${minutes}:${secondes}`;
+  }
+
+  setInterval(mettreAJourHorloge, 1000);
+  mettreAJourHorloge();
 </script>
 
 </body>
